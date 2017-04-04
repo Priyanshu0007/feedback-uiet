@@ -17,8 +17,9 @@ if(isset($_POST['submit']))
 	//exit;
 	if(mysql_num_rows($res)>=1)
 	{
-		echo "<p align=\"center\">Feedback is already submited by this '".$_POST['roll_no']."' roll no for this subject.<br>You'll be redirected to Home Page after (3) Seconds</p>";
+		echo "<p align=\"center\">Feedback is already submited by this '".$_POST['roll_no']."' roll no for this subject.<br>You'll be redirected to Home Page after (3) Seconds</p><script>console.log('Already submitted!')</script>";
 		echo "<meta http-equiv=Refresh content=3;url=index.php>";
+
 		exit;
 	}
 	else

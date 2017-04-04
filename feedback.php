@@ -158,8 +158,9 @@ else{
 		  </tr>
 		  <tr>
           <td colspan="5" align="center"><b><font size="3.5" color="green" >Note: Enter Rating from 1 to 5 (1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree) </b></font></td>
-        </tr>
+        	</tr>
 		  </thead>
+		  <tbody>
 		  <?php
 		  	$sql_que="select * from feedback_ques_master";
 			$res_que=mysql_query($sql_que) or die(mysql_error());
@@ -167,7 +168,7 @@ else{
 			$tab_ind=7;
 			while($row_que=mysql_fetch_array($res_que))
 			{
-				echo "<tr>";
+				echo "<tr class='question'>";
 				echo "<td align=\"center\">".$i."</td>";
 				echo "<td>".$row_que['ques']."</td>";
 				echo "<td> <input type=\"number\" name=\"ans_$i\" size=\"3\" onkeypress=\"return isNumberOnly(event);\" maxlength=\"1\" tabindex=\"$tab_ind\" min=\"1\" max=\"5\" required/></td>";$tab_ind++;
@@ -183,7 +184,7 @@ else{
 			
 			</td><td></td>
 		</tr>
-			<tr>
+			<tr class='question'>
 				<td align="center">11</td>
 		
 				<td><br><strong>Course Content :</strong><br><br>
@@ -197,7 +198,7 @@ else{
 			</td>
 		</tr>
 		
-		<tr>
+		<tr class='question'>
 				<td align="center">12</td>
 		
 				<td><br><strong>Relevance of the course in the overall structure of program :</strong><br><br>
@@ -211,7 +212,7 @@ else{
 			</td>
 		</tr>
 		
-				<tr>
+				<tr class='question'>
 				<td align="center">13</td>
 		
 				<td><br><strong>Overlap with other courses :</strong><br><br>
@@ -225,7 +226,7 @@ else{
 			</td>
 		</tr>
 		
-		<tr>
+		<tr class='question'>
 				<td align="center">14</td>
 		
 				<td><br><strong>Recommended reading material was:</strong><br><br>
@@ -239,7 +240,7 @@ else{
 			</td>
 		</tr>
 		
-		<tr>
+		<tr class='question'>
 				<td align="center">15</td>
 		
 				<td><br><strong>Class tests/mid-semester tests were conducted:</strong><br><br>
@@ -253,7 +254,7 @@ else{
 			</td>
 		</tr>
 		
-		<tr>
+		<tr class='question'>
 				<td align="center">16</td>
 		
 				<td><br><strong>The class tests/mid-semester tests were:</strong><br><br>
@@ -323,14 +324,15 @@ else{
 			
 			</td>
 		</tr>-->
-		  <tr>
+		  <tr class='question'>
 		  <td>Remark:</td>
 		  <td colspan="2"><textarea name="remark" style="width:900px; height:80px;" onkeypress="return isCharOnly(event);" tabindex="16"></textarea></td>
 		  </tr>		  
-		  	<tr>
+		  	<tr class='question'>
 				<td colspan="2"  class="rounded-foot-left" align="center"><input class="button" type="submit" name="submit" value="Submit" tabindex="17"/>&nbsp;<input type="reset" name="reset" value="Reset" tabindex="18" class="button"/></td>
 				<td align="center" class="rounded-foot-right"></td>
-			</tr>			
+			</tr>
+			</tbody>			
 		  </table>
 		  </td>
         </tr>
