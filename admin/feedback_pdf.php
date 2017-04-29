@@ -91,11 +91,12 @@ if((isset($_SESSION['myusername']))&&($_SESSION['myusername']==$fname))
      {	
      	$pdf->SetFont('Courier','',10);
      	$pdf->Cell(0,15,'Q'.$i.') '.$row_que['question'],'T',1,'L');
-     	$query = "SELECT ans$i as 'Option',count(*) as Response FROM `feedback_master` GROUP BY ans$i";
+     	$query = "SELECT ans$i as 'Option',count(*) as Response FROM `feedback_master`
+     				 WHERE `b_id` = ".$branch." AND `sub_id` = ".$sub." AND `sem_id` = ".$sem." AND `f_id` = ".$faculty." GROUP BY ans$i";
 		$pdf->Table($query,$prop2);
 		$diff = 5;
-		if(($i==6)||($i==9)||($i==12))
-			$diff=50;
+		/*if(($i==6)||($i==9)||($i==12))
+			$diff=50;*/
 		$pdf->Ln($diff);
 		$diff=5;
      	$i++;
