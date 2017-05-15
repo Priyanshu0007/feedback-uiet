@@ -44,8 +44,16 @@
 		var x = document.getElementById('submit_button');
 		var y = document.getElementById('gen_pdf');
 		var z = document.getElementById('link_pdf');
+		var roll_but = document.getElementById('gen1_pdf');
+		var roll = document.getElementById('link_roll');
 		x.setAttribute("hidden",true); 
+		roll_but.removeAttribute('hidden',true);
 		y.removeAttribute("hidden",true);
+		var roll_url = "submitted_roll.php";
+		roll_url=roll_url+"?branch="+branch;
+		roll_url=roll_url+"&faculty="+faculty;
+		roll_url=roll_url+"&sem="+sem;
+		roll_url=roll_url+"&sub="+sub;
 		var hit_url = "feedback_pdf.php";
 		hit_url=hit_url+"?branch="+branch;
 		hit_url=hit_url+"&faculty="+faculty;
@@ -56,6 +64,7 @@
 		hit_url=hit_url+"&sub_name="+<?php echo '"'.$sub_combo['sub_name'].'"'; ?>;
 		hit_url=hit_url+"&b_s="+<?php echo '"'.$b_s.'"'; ?>;
 		z.setAttribute("href",hit_url);
+		roll.setAttribute("href",roll_url);
 }
 </script>
 
@@ -126,6 +135,7 @@
 		  		<input id="submit_button" class="button" type="submit" name="Submit" value="Submit"  onclick="return chkForm();"/>
 		  		<input class="button" type="button" value="Reset" onclick="location.href='<?php echo $_SERVER['PHP_SELF']?>'"> 			
 		 		<a id="link_pdf" target="_blank"><input id="gen_pdf" type="button" name="pdf_file" class="button" value="Generate PDF file" hidden /></a>
+		 		<a id="link_roll" target="_blank"><input id="gen1_pdf" type="button" name="pdf_file" class="button" value="Submitted Feedback" hidden /></a>
 		 		
 	  	</td>
 		</tr>
