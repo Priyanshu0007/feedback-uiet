@@ -6,7 +6,7 @@ require('session_chk.php');
 	$sem = $_REQUEST['sem'];
 	$sub = $_REQUEST['sub'];
 
-	$query = "SELECT `roll_no` FROM `feedback_master` WHERE `b_id` = 1 AND `sub_id` = 27 AND `sem_id` = 13 AND `f_id` = 26	 ORDER BY `roll_no` ASC";
+	$query = "SELECT `roll_no` FROM `feedback_master` WHERE `b_id` = $branch AND `sub_id` = $sub AND `sem_id` = $sem AND `f_id` = $faculty	 ORDER BY `roll_no` ASC";
     $res = mysql_query($query) or die(mysql_error());
     ?>
     <!DOCTYPE html>
