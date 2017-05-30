@@ -17,6 +17,7 @@
 <body>
 <?php
 	$query = "select * from faculty_master where mem_id=".$mem_id;
+	//echo $query;
 	$res = mysql_query($query) or die(mysql_error());
 	$result = mysql_fetch_array($res);
 
