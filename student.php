@@ -62,7 +62,7 @@ include("includes/config_db.php");
 function valid_roll(){
 	var roll = document.roll_form.roll.value;
 	var err = document.getElementById("Error");
-	if(roll.match(/^([U,u][E,M,e,m][1][3,4,5,6][1,3,4,5,8,9][0,1]\d\d)$/g))
+	if(roll.match(/^([U,u][E,M,e,m][1][4,5,6,7][1,3,4,5,8,9][0,1]\d\d)$/g))
 	{
 		err.style.color = "rgb(37, 158, 26)";
 		err.innerHTML = "&#10004; Hit Submit &#10004;";

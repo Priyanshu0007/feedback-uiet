@@ -19,14 +19,14 @@ if((isset($_REQUEST['roll']))&&(!empty($_REQUEST['roll'])))
 	$sem  =  $_REQUEST['sem'];
 	$branch= $_REQUEST['branch'];
 	$batch = 2014+intval(substr($roll, 3,1));
-	if($batch==2017)
-		$sem = 8;
-	elseif ($batch==2018)
-		$sem = 6;
+	if($batch==2018)
+		$sem = 7;
 	elseif ($batch==2019)
-		$sem = 4;
+		$sem = 5;
 	elseif ($batch==2020)
-		$sem = 2;
+		$sem = 3;
+	elseif ($batch==2021)
+		$sem = 1;
 	$br = intval(substr($roll, 4,1));
 	if($br == 8)
 		$branch = "IT";
