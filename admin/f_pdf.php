@@ -12,7 +12,7 @@
 		$sub_name = $_REQUEST['sub_name'];
 		$b_s = $_REQUEST['b_s'];
 
-			$query = "SELECT UPPER(roll_no) FROM `feedback_master` WHERE `b_id` = ".$branch." AND `sub_id` = ".$sub." AND `sem_id` = ".$sem." AND `f_id` = ".$faculty. " LIMIT 1,1";
+			$query = "SELECT UPPER(roll_no) FROM `feedback_master` WHERE `b_id` = ".$branch." AND `sub_id` = ".$sub." AND `sem_id` = ".$sem." AND `f_id` = ".$faculty. " LIMIT 0,1";
 			$res_que=mysql_query($query) or die(mysql_error());
 			$base = substr(mysql_fetch_array($res_que)[0],0,5);
 	     	?>
