@@ -55,7 +55,7 @@
 		roll_url=roll_url+"&faculty="+faculty;
 		roll_url=roll_url+"&sem="+sem;
 		roll_url=roll_url+"&sub="+sub;
-		var hit_url = "feedback_pdf.php";
+		var hit_url = "f_pdf.php";
 		hit_url=hit_url+"?branch="+branch;
 		hit_url=hit_url+"&faculty="+faculty;
 		hit_url=hit_url+"&sem="+sem;
